@@ -17,5 +17,9 @@
     <string name="title_activity_first_help">FirstHelpActivity</string>
     <string name="first_help_gesture">Gestes de premiers secours</string>
     <string name="find_health_place">Trouver un etablissement de santé</string>
+    <string name="wich_type_of_place">Quel type d\'établissement cherchez-vous ?</string>
+    <string name="first_help_gesture_list">Liste des gestes de premiers secours</string>
+    <string name="title_activity_find_place_maps">Map</string>
+    <string name="go_to_map">Aller sur la carte</string>
 
 </resources>

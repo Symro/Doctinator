@@ -1,9 +1,12 @@
 package com.doctinator.doctinator;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class FindPlace extends ActionBarActivity {
@@ -12,6 +15,19 @@ public class FindPlace extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_place);
+
+        // Get button
+        Button goMapButton = (Button) findViewById(R.id.goToMap);
+
+        // Listener
+        goMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start new intent
+                Intent mapSreen = new Intent(getApplicationContext(), FindPlaceMapsActivity.class);
+                startActivity(mapSreen);
+            }
+        });
     }
 
 
