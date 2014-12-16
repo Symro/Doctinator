@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Doctinator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="call_help">Appeler les secours ?</string>
+    <string name="call_list">Liste des numéros à appeler en cas d\'urgence</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="title_activity_call_list">CallListActivity</string>
+    <string name="title_activity_action_list">ActionList</string>
+    <string name="what_to_do">Que voulez vous faire ?</string>
+    <string name="first_aid_gesture">Geste de premiers secours</string>
+    <string name="find_help_place">Trouver un établissement de secours</string>
+    <string name="title_activity_find_place">FindPlace</string>
+    <string name="title_activity_first_help">FirstHelpActivity</string>
+    <string name="first_help_gesture">Gestes de premiers secours</string>
+    <string name="find_health_place">Trouver un etablissement de santé</string>
+
+</resources>
