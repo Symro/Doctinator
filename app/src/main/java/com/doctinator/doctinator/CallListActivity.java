@@ -4,6 +4,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.doctinator.doctinator.Adapters.CallListAdapter;
+import com.doctinator.doctinator.models.CallList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CallListActivity extends ActionBarActivity {
@@ -12,6 +19,25 @@ public class CallListActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_list);
+
+        // Data source
+        ArrayList<CallList> arrayOfCalls = new ArrayList<CallList>();
+
+        // Convert the array to views
+        CallListAdapter adapter = new CallListAdapter(this, arrayOfCalls);
+
+        // Attach the adapter to the listView
+        ListView listView = (ListView) findViewById(R.id.callListView);
+        listView.setAdapter(adapter);
+
+        // populating array
+        CallList newCall = new CallList("Pompiers", "...", 18);
+        CallList newCall1 = new CallList("SAMU", "...", 15);
+        CallList newCall2 = new CallList("Police", "...", 17);
+        adapter.add(newCall);
+        adapter.add(newCall1);
+        adapter.add(newCall2);
+
     }
 
 
