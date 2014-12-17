@@ -18,8 +18,10 @@
     <string name="first_help_gesture">Gestes de premiers secours</string>
     <string name="find_health_place">Trouver un etablissement de santé</string>
     <string name="wich_type_of_place">Quel type d\'établissement cherchez-vous ?</string>
-    <string name="first_help_gesture_list">Liste des gestes de premiers secours</string>
+    <string name="first_help_gesture_list">Les premiers secours</string>
     <string name="title_activity_find_place_maps">Map</string>
     <string name="go_to_map">Aller sur la carte</string>
+    <string name="first_help_gesture_text">Attention, n\'appelez les seocurs qu\'en cas d\'urgence médicales ou d\'extreme necessité</string>
+    <string name="first_help_gesture_textarea">Voici une liste de quelques gestes de premiers secours.</string>
 
 </resources>

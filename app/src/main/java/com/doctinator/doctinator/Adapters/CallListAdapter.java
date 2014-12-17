@@ -31,11 +31,11 @@ public class CallListAdapter extends ArrayAdapter<CallList> {
 
         // Check for data population
         TextView name = (TextView) convertView.findViewById(R.id.callName);
-        TextView description = (TextView) convertView.findViewById(R.id.callDescription);
+        // TextView description = (TextView) convertView.findViewById(R.id.callDescription);
 
         // Populate data
         name.setText(call.name);
-        description.setText(call.description);
+        // description.setText(call.description);
 
         return convertView;
     }

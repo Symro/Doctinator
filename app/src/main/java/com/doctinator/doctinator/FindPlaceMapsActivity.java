@@ -14,10 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -110,7 +107,6 @@ public class FindPlaceMapsActivity extends FragmentActivity {
         mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
         // Put the marker
         mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Vous êtes ici !"));
-        System.out.println(new LatLng(latitude, longitude));
 
         // Put another marker
         // mMap.addMarker(new MarkerOptions().position(new LatLng(latitude+0.01, longitude+0.01)).title("Defibrillateur le plus proche"));
@@ -133,9 +129,15 @@ public class FindPlaceMapsActivity extends FragmentActivity {
 
         // Add markers to the map
         // Add them to map
-        for(LatLng pos : latLngList){
+        //for(LatLng pos : latLngList){
             // System.out.println(pos);
-            mMap.addMarker(new MarkerOptions().position(pos).title("Défibrillateur"));
+          //  mMap.addMarker(new MarkerOptions().position(new LatLng()).title("Défibrillateur"));
+        //}
+        System.out.println(new LatLng(latitude, longitude));
+        System.out.println(latLngList.get(1));
+        for (int i = 0; i < latLngList.size(); i++){
+            //System.out.println(latLngList.get(i));
+            mMap.addMarker(new MarkerOptions().position(latLngList.get(i)).title("def"));
         }
 
     }

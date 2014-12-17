@@ -7,6 +7,29 @@
     tools:context="com.doctinator.doctinator.FirstHelpActivity">
 
     <TextView android:text="@string/first_help_gesture_list" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:id="@+id/textView6"
+        android:textColor="#D8372E" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/first_help_gesture_textarea"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gestureList"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView3" />
 
 </RelativeLayout>
