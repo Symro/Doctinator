@@ -13,7 +13,18 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 public class FindPlaceMapsActivity extends FragmentActivity {
+
+
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -21,13 +32,22 @@ public class FindPlaceMapsActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_place_maps);
-        setUpMapIfNeeded();
+
+        try {
+            setUpMapIfNeeded();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
+        try {
+            setUpMapIfNeeded();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -45,7 +65,7 @@ public class FindPlaceMapsActivity extends FragmentActivity {
      * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
      * method in {@link #onResume()} to guarantee that it will be called.
      */
-    private void setUpMapIfNeeded() {
+    private void setUpMapIfNeeded() throws IOException {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
@@ -64,8 +84,7 @@ public class FindPlaceMapsActivity extends FragmentActivity {
      * <p/>
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+    private void setUpMap() throws IOException {
 
         // Enable geolocalisation
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -91,6 +110,33 @@ public class FindPlaceMapsActivity extends FragmentActivity {
         mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
         // Put the marker
         mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Vous êtes ici !"));
+        System.out.println(new LatLng(latitude, longitude));
+
+        // Put another marker
+        // mMap.addMarker(new MarkerOptions().position(new LatLng(latitude+0.01, longitude+0.01)).title("Defibrillateur le plus proche"));
+
+        // Parse CSV file to add marker for each position
+        List<LatLng> latLngList = new ArrayList<LatLng>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("defibrillateur.csv")));
+        try {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                double lat = Double.parseDouble(line.split("#")[1]);
+                double lon = Double.parseDouble(line.split("#")[2]);
+                latLngList.add(new LatLng(lat, lon));
+            }
+
+        }
+        catch (IOException ex) {
+            // handle exception
+        }
+
+        // Add markers to the map
+        // Add them to map
+        for(LatLng pos : latLngList){
+            // System.out.println(pos);
+            mMap.addMarker(new MarkerOptions().position(pos).title("Défibrillateur"));
+        }
 
     }
 }
