@@ -1,10 +1,15 @@
 package com.doctinator.doctinator;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.doctinator.doctinator.Adapters.CallListAdapter;
 import com.doctinator.doctinator.models.CallList;
@@ -27,7 +32,7 @@ public class CallListActivity extends ActionBarActivity {
         CallListAdapter adapter = new CallListAdapter(this, arrayOfCalls);
 
         // Attach the adapter to the listView
-        ListView listView = (ListView) findViewById(R.id.callListView);
+        final ListView listView = (ListView) findViewById(R.id.callListView);
         listView.setAdapter(adapter);
 
         // populating array
@@ -37,6 +42,44 @@ public class CallListActivity extends ActionBarActivity {
         adapter.add(newCall);
         adapter.add(newCall1);
         adapter.add(newCall2);
+
+        // list view click
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // ListView Clicked item index
+                int itemPosition = position;
+
+                if(itemPosition == 1){
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:666"));
+                    startActivity(callIntent);
+                }
+
+                switch (itemPosition){
+                    case 0:
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:666"));
+                        startActivity(callIntent);
+                        break;
+                    case 1:
+                        callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:666"));
+                        startActivity(callIntent);
+                        break;
+                    case 2:
+                        callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:666"));
+                        startActivity(callIntent);
+                        break;
+
+                }
+
+            }
+
+        });
 
     }
 
