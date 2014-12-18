@@ -16,6 +16,10 @@ public class FindPlace extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_place);
 
+        // Set actionbar title
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setTitle(getResources().getString(R.string.titleFindplace));
+
         // Get button
         Button goMapButton = (Button) findViewById(R.id.goToMap);
 

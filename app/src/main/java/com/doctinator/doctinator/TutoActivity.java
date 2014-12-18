@@ -25,6 +25,10 @@ public class TutoActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tuto);
 
+        // Set actionbar title
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setTitle(getResources().getString(R.string.titleFirstHelp));
+
         Bundle tutorialId = getIntent().getExtras();
         int id = tutorialId.getInt("key");
 

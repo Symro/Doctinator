@@ -18,6 +18,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set actionbar title
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setTitle(getResources().getString(R.string.titleMain));
+
         // Get buttons to add listener
         Button yesButtonCall = (Button) findViewById(R.id.yesCallButton);
         Button noButtonCall = (Button) findViewById(R.id.noCallButton);
@@ -88,4 +92,5 @@ public class MainActivity extends ActionBarActivity {
 
         alert.show();
     }
+
 }

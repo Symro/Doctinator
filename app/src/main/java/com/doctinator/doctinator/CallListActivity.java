@@ -25,6 +25,10 @@ public class CallListActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_list);
 
+        // Set actionbar title
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setTitle(getResources().getString(R.string.titleCallList));
+
         // Data source
         ArrayList<CallList> arrayOfCalls = new ArrayList<CallList>();
 
@@ -38,14 +42,12 @@ public class CallListActivity extends ActionBarActivity {
         // populating array
         CallList newCall = new CallList("18 - Pompiers", "...", 18);
         CallList newCall1 = new CallList("15 - SAMU", "...", 15);
-        CallList newCall2 = new CallList("Police", "...", 17);
+        CallList newCall2 = new CallList("17 - Police", "...", 17);
         CallList newCall3 = new CallList("112 - Numéro d'urgence européen", "...", 112);
-        CallList newCall4 = new CallList("114 - Sourds et malentendants", "...", 114);
         adapter.add(newCall);
         adapter.add(newCall1);
         adapter.add(newCall2);
         adapter.add(newCall3);
-        adapter.add(newCall4);
 
         // list view click
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -19,6 +19,10 @@ public class FirstHelpActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_help);
 
+        // Set actionbar title
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setTitle(getResources().getString(R.string.titleFirstHelp));
+
         // Get the list view concerned
         final ListView listView = (ListView) findViewById(R.id.gestureList);
 

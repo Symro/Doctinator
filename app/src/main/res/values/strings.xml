@@ -4,7 +4,7 @@
     <string name="app_name">Healp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="call_help">Appeler les secours ?</string>
+    <string name="call_help">Appeler les services d\'urgences ?</string>
     <string name="call_list">Liste des numéros à appeler en cas d\'urgence</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
@@ -21,11 +21,15 @@
     <string name="first_help_gesture_list">Les premiers secours</string>
     <string name="title_activity_find_place_maps">Map</string>
     <string name="go_to_map">Aller sur la carte</string>
-    <string name="first_help_gesture_text">Attention, n\'appelez les seocurs qu\'en cas d\'urgence médicales ou d\'extreme necessité</string>
+    <string name="first_help_gesture_text">Attention, n\'appelez les secours qu\'en cas d\'urgence médicales ou d\'extreme necessité</string>
     <string name="first_help_gesture_textarea">Voici une liste de quelques gestes de premiers secours.</string>
     <string name="title_activity_tuto">TutoActivity</string>
     <string name="next_step">étape suivante</string>
     <string name="dont_call">Ne pas appeler</string>
     <string name="call">Appeler</string>
+    <string name="titleMain">Healp</string>
+    <string name="titleFindplace">Trouver un établissement</string>
+    <string name="titleFirstHelp">Listes des gestes</string>
+    <string name="titleCallList">Listes des numéros</string>
 
 </resources>
