@@ -1,5 +1,6 @@
 package com.doctinator.doctinator;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,12 +29,15 @@ public class FirstHelpActivity extends ActionBarActivity {
             "Étouffement",
             "Fracture",
             "Plaie",
-            "Brûlure",
-            "Piqûre / morsure"
+            "Brûlure"
         };
 
         // Define adapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, gestureMenu);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, gestureMenu);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.first_help_row, R.id.txtGesture ,gestureMenu);
+        // Reference to listview
+        ListView lv = (ListView) this.findViewById(R.id.gestureList);
+        lv.setAdapter(adapter);
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);
@@ -50,10 +54,21 @@ public class FirstHelpActivity extends ActionBarActivity {
                 // ListView Clicked item value
                 String itemValue = (String) listView.getItemAtPosition(position);
 
-                // Show Alert
-                Toast.makeText(getApplicationContext(),
-                    "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
-                    .show();
+                // Log row informations
+                // Toast.makeText(getApplicationContext(),
+                    //"Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
+                    //.show();
+
+                // Prepare a new Intent
+                Intent tutorialNextScreen = new Intent(getApplicationContext(), TutoActivity.class);
+
+                // Passing id to next Intent
+                Bundle tutorialId = new Bundle();
+                tutorialId.putInt("key", itemPosition); //Your id
+                tutorialNextScreen.putExtras(tutorialId); //Put your id to your next Intent
+
+                // Start the new activity
+                startActivity(tutorialNextScreen);
 
             }
 

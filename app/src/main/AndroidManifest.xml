@@ -67,6 +67,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.doctinator.doctinator.FindPlace" />
         </activity>
+        <activity
+            android:name=".TutoActivity"
+            android:label="@string/title_activity_tuto"
+            android:parentActivityName=".FirstHelpActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doctinator.doctinator.FirstHelpActivity" />
+        </activity>
     </application>
 
 </manifest>
