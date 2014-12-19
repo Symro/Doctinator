@@ -133,17 +133,22 @@ public class TutoActivity extends ActionBarActivity {
         tutorialDescription.setText(description);
 
         // Listeners
-        Button nextStep = (Button) findViewById(R.id.nextStep);
+        final Button nextStep = (Button) findViewById(R.id.nextStep);
+
         // No button click redirection
-        nextStep.setOnClickListener(new View.OnClickListener(){
+        nextStep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 i++;
-                if (i < steps.length){
+                if (i < steps.length) {
                     tutorialText.setText(steps[i]);
-                }else{
+                    // Set text to button
+                    nextStep.setText("Etape suivante " + i + "/" + (steps.length - 1));
+                } else {
                     i = 0;
                     tutorialText.setText(steps[i]);
+                    // Set text to button
+                    nextStep.setText("Etape suivante " + i + "/" + (steps.length - 1));
                 }
             }
         });
