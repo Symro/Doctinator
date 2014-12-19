@@ -39,9 +39,6 @@ public class FirstHelpActivity extends ActionBarActivity {
         // Define adapter
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, gestureMenu);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.first_help_row, R.id.txtGesture ,gestureMenu);
-        // Reference to listview
-        ListView lv = (ListView) this.findViewById(R.id.gestureList);
-        lv.setAdapter(adapter);
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);

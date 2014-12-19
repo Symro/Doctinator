@@ -109,7 +109,10 @@ public class FindPlaceMapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Vous êtes ici !"));
 
         // Put another marker
-        // mMap.addMarker(new MarkerOptions().position(new LatLng(latitude+0.01, longitude+0.01)).title("Defibrillateur le plus proche"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude+0.01, longitude+0.01)).title("Defibrillateur le plus proche"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude-0.01, longitude-0.01)).title("Defibrillateur le plus proche"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude-0.02, longitude-0.02)).title("Defibrillateur le plus proche"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude+0.02, longitude+0.02)).title("Defibrillateur le plus proche"));
 
         // Parse CSV file to add marker for each position
         List<LatLng> latLngList = new ArrayList<LatLng>();
